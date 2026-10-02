@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Employee login for Sutton Car Care staff sales panel." />
+  <title>Staff login | Sutton Car Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=22" />
+</head>
+<body class="page-auth">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="auth-shell">
+    <aside class="auth-visual" aria-hidden="true">
+      <div class="auth-visual-bg">
+        <img src="assets/warehouse-bay.jpg?v=3" alt="" width="960" height="1080" />
+        <div class="auth-visual-scrim"></div>
+      </div>
+      <div class="auth-visual-content">
+        <a class="brand" href="index.html">
+          <span class="brand-mark"></span>
+          <span class="brand-text">
+            <span class="brand-name">Staff Panel</span>
+            <span class="brand-sub">Employees</span>
+          </span>
+        </a>
+        <p class="auth-quote">Each employee has their own account — every tyre sale is logged against the person who sold it.</p>
+        <ul class="auth-perks">
+          <li>Personal staff login</li>
+          <li>Sales tied to your account</li>
+          <li>Tyre, qty, price &amp; time tracked</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="auth-main" id="main">
+      <div class="auth-card">
+        <div class="auth-tabs" role="tablist">
+          <button type="button" class="auth-tab is-active" data-seller-tab="login" role="tab" aria-selected="true">Sign in</button>
+          <button type="button" class="auth-tab" data-seller-tab="register" role="tab" aria-selected="false">Register</button>
+        </div>
+
+        <div data-seller-panel="login">
+          <p class="eyebrow gold">Staff access</p>
+          <h1>Employee sign in</h1>
+          <p class="auth-lead">Use your personal staff account. Sales you record stay under your name.</p>
+
+          <form class="auth-form" id="seller-login-form" novalidate>
+            <label>
+              <span>Work email</span>
+              <input type="email" name="email" required autocomplete="email" placeholder="name@suttoncarcare.co.uk" />
+            </label>
+            <label>
+              <span>Password</span>
+              <div class="password-field">
+                <input type="password" name="password" required autocomplete="current-password" minlength="6" placeholder="Your password" />
+                <button type="button" class="password-toggle" data-toggle-password aria-label="Show password">Show</button>
+              </div>
+            </label>
+            <button class="btn btn-gold btn-lg auth-submit" type="submit">Open staff panel</button>
+            <p class="form-status" id="seller-login-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div data-seller-panel="register" hidden>
+          <p class="eyebrow gold">New employee</p>
+          <h1>Create staff account</h1>
+          <p class="auth-lead">Register once — your sales history will always show under this account.</p>
+
+          <form class="auth-form" id="seller-register-form" novalidate>
+            <label>
+              <span>Workplace</span>
+              <input type="text" name="shop" value="Sutton Car Care Centre" required autocomplete="organization" />
+            </label>
+            <label>
+              <span>Full name</span>
+              <input type="text" name="name" required autocomplete="name" placeholder="Jane Smith" />
+            </label>
+            <label>
+              <span>Work email</span>
+              <input type="email" name="email" required autocomplete="email" placeholder="name@suttoncarcare.co.uk" />
+            </label>
+            <label>
+              <span>Password</span>
+              <div class="password-field">
+                <input type="password" name="password" required autocomplete="new-password" minlength="6" placeholder="Min. 6 characters" />
+                <button type="button" class="password-toggle" data-toggle-password aria-label="Show password">Show</button>
+              </div>
+            </label>
+            <button class="btn btn-gold btn-lg auth-submit" type="submit">Create employee account</button>
+            <p class="form-status" id="seller-register-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <p class="auth-back">
+          <a href="index.html">← Customer site</a>
+          ·
+          <a href="seller-dashboard.html">Dashboard</a>
+        </p>
+      </div>
+    </main>
+  </div>
+
+  <script src="seller.js?v=5"></script>
+</body>
+</html>

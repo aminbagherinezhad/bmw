@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Full staff sales log — tyre, time, quantity, price and employee." />
+  <title>Sales log | Sutton Car Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=22" />
+</head>
+<body class="page-book page-seller">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header is-scrolled" id="header">
+    <div class="header-inner">
+      <a class="brand" href="seller-dashboard.html" aria-label="Staff dashboard">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name">Staff Panel</span>
+          <span class="brand-sub">Sales log</span>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Staff">
+        <a href="seller-dashboard.html">Overview</a>
+        <a href="seller-tyres.html">Tyres</a>
+        <a href="seller-services.html">Services</a>
+        <a href="seller-products.html">Catalogue</a>
+        <a href="seller-sales.html" aria-current="page">Sales log</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="user-chip is-visible" data-seller-chip>
+          <span data-seller-shop>Staff</span>
+          <button type="button" data-seller-logout>Log out</button>
+        </div>
+        <a class="btn btn-gold btn-sm" href="seller-products.html">Record sale</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="nav-mobile" id="mobile-nav" hidden>
+      <a href="seller-dashboard.html">Overview</a>
+      <a href="seller-tyres.html">Tyres</a>
+      <a href="seller-services.html">Services</a>
+      <a href="seller-products.html">Catalogue</a>
+      <a href="seller-sales.html" aria-current="page">Sales log</a>
+      <button type="button" class="btn btn-outline" data-seller-logout>Log out</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="book-hero orders-hero">
+      <div class="container book-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="seller-dashboard.html">Dashboard</a>
+          <span aria-hidden="true">/</span>
+          <span>Sales log</span>
+        </nav>
+        <p class="eyebrow gold">Traceable sales</p>
+        <h1>What was sold, by whom</h1>
+        <p class="book-hero-lead">Every record shows the item or service, sale time, quantity, price and the employee account that recorded it.</p>
+      </div>
+    </section>
+
+    <section class="section orders-section">
+      <div class="container">
+        <div class="orders-stats seller-stats sales-summary">
+          <div class="stat-tile">
+            <strong id="sales-sum-count">0</strong>
+            <span>Sale records</span>
+          </div>
+          <div class="stat-tile">
+            <strong id="sales-sum-units">0</strong>
+            <span>Units sold</span>
+          </div>
+          <div class="stat-tile">
+            <strong id="sales-sum-revenue">£0</strong>
+            <span>Sale value</span>
+          </div>
+        </div>
+
+        <div class="orders-toolbar">
+          <div class="book-filters" role="group" aria-label="Filter sales">
+            <button type="button" class="filter-chip is-active" data-sales-filter="mine">My sales</button>
+            <button type="button" class="filter-chip" data-sales-filter="all">All staff</button>
+            <button type="button" class="filter-chip" data-sales-filter="tyres">Tyres only</button>
+            <button type="button" class="filter-chip" data-sales-filter="service">Services only</button>
+          </div>
+        </div>
+
+        <section class="seller-panel seller-panel-wide">
+          <header class="seller-panel-head">
+            <h2>Sales history</h2>
+            <p class="panel-note">Signed in as <strong data-seller-name>Staff</strong></p>
+          </header>
+          <div id="sales-list"></div>
+          <p class="catalogue-empty" id="sales-empty" hidden>No sales in this view yet. Record a sale from the catalogue.</p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="border:0;padding-top:0">
+      <p>© <span id="year"></span> Sutton Staff Panel</p>
+      <p class="footer-note"><a href="seller-products.html">Record a sale</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=5"></script>
+  <script src="seller.js?v=5"></script>
+</body>
+</html>

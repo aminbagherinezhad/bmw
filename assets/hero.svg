@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1a2f"/>
+      <stop offset="45%" stop-color="#123456"/>
+      <stop offset="100%" stop-color="#06101d"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a3352"/>
+      <stop offset="100%" stop-color="#071422"/>
+    </linearGradient>
+    <linearGradient id="carBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a74c4"/>
+      <stop offset="55%" stop-color="#163a66"/>
+      <stop offset="100%" stop-color="#0f2744"/>
+    </linearGradient>
+    <linearGradient id="goldGlow" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="lamp" cx="50%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#e0c35c" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#1e5a9a" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#06101d" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <ellipse cx="1400" cy="280" rx="520" ry="340" fill="url(#lamp)"/>
+  <ellipse cx="900" cy="200" rx="380" ry="220" fill="url(#goldGlow)"/>
+
+  <!-- garage structure -->
+  <rect x="980" y="120" width="820" height="620" fill="#0d2137" opacity="0.85"/>
+  <rect x="1020" y="170" width="740" height="420" fill="#14304a"/>
+  <rect x="1020" y="170" width="740" height="28" fill="#d4af37" opacity="0.35"/>
+  <g opacity="0.25" stroke="#9bb0c9" stroke-width="2">
+    <line x1="1160" y1="198" x2="1160" y2="590"/>
+    <line x1="1390" y1="198" x2="1390" y2="590"/>
+    <line x1="1620" y1="198" x2="1620" y2="590"/>
+  </g>
+
+  <!-- ceiling lights -->
+  <rect x="1120" y="200" width="120" height="14" rx="4" fill="#d4af37" opacity="0.7"/>
+  <rect x="1360" y="200" width="120" height="14" rx="4" fill="#d4af37" opacity="0.55"/>
+  <rect x="1600" y="200" width="120" height="14" rx="4" fill="#d4af37" opacity="0.45"/>
+
+  <!-- floor -->
+  <path d="M0 720 L1920 640 L1920 1080 L0 1080 Z" fill="url(#floor)"/>
+  <g stroke="#d4af37" stroke-opacity="0.12" stroke-width="2">
+    <path d="M120 900 L780 760"/>
+    <path d="M420 980 L1100 820"/>
+    <path d="M860 1040 L1500 880"/>
+  </g>
+
+  <!-- stylized car silhouette -->
+  <g transform="translate(180,520)">
+    <path d="M80 220 C140 140 220 90 360 80 C520 68 680 95 820 150 C900 185 960 220 1000 250 L1000 310 L80 310 Z" fill="url(#carBody)"/>
+    <path d="M280 120 C360 70 520 55 660 95 C720 115 760 145 790 175 L300 175 Z" fill="#9bb0c9" opacity="0.28"/>
+    <rect x="120" y="250" width="820" height="28" fill="#06101d" opacity="0.45"/>
+    <circle cx="260" cy="310" r="70" fill="#06101d"/>
+    <circle cx="260" cy="310" r="42" fill="#1e5a9a"/>
+    <circle cx="260" cy="310" r="18" fill="#d4af37" opacity="0.85"/>
+    <circle cx="820" cy="310" r="70" fill="#06101d"/>
+    <circle cx="820" cy="310" r="42" fill="#1e5a9a"/>
+    <circle cx="820" cy="310" r="18" fill="#d4af37" opacity="0.85"/>
+    <rect x="900" y="210" width="70" height="28" rx="6" fill="#e0c35c" opacity="0.8"/>
+  </g>
+
+  <!-- lift posts -->
+  <rect x="1280" y="360" width="18" height="320" fill="#9bb0c9" opacity="0.35"/>
+  <rect x="1680" y="360" width="18" height="320" fill="#9bb0c9" opacity="0.35"/>
+  <rect x="1240" y="360" width="240" height="16" rx="4" fill="#d4af37" opacity="0.4"/>
+</svg>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Staff dashboard — your sales, stock and team tyre sales." />
+  <title>Staff dashboard | Sutton Car Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=22" />
+</head>
+<body class="page-book page-seller">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header is-scrolled" id="header">
+    <div class="header-inner">
+      <a class="brand" href="seller-dashboard.html" aria-label="Staff dashboard">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name">Staff Panel</span>
+          <span class="brand-sub">Dashboard</span>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Staff">
+        <a href="seller-dashboard.html" aria-current="page">Overview</a>
+        <a href="seller-tyres.html">Tyres</a>
+        <a href="seller-services.html">Services</a>
+        <a href="seller-products.html">Catalogue</a>
+        <a href="seller-sales.html">Sales log</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="user-chip is-visible" data-seller-chip>
+          <span data-seller-shop>Staff</span>
+          <button type="button" data-seller-logout>Log out</button>
+        </div>
+        <a class="btn btn-gold btn-sm" href="seller-products.html">Record sale</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="nav-mobile" id="mobile-nav" hidden>
+      <a href="seller-dashboard.html" aria-current="page">Overview</a>
+      <a href="seller-tyres.html">Tyres</a>
+      <a href="seller-services.html">Services</a>
+      <a href="seller-products.html">Catalogue</a>
+      <a href="seller-sales.html">Sales log</a>
+      <a href="index.html">Customer site</a>
+      <button type="button" class="btn btn-outline" data-seller-logout>Log out</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="book-hero orders-hero">
+      <div class="container book-hero-inner">
+        <p class="eyebrow gold">Your account</p>
+        <h1>Welcome, <span data-seller-name>Staff</span></h1>
+        <p class="book-hero-lead">Your sales are logged under this account — product, qty, price and time.</p>
+      </div>
+    </section>
+
+    <section class="section orders-section seller-dashboard">
+      <div class="container">
+        <div class="orders-stats seller-stats">
+          <div class="stat-tile">
+            <strong id="kpi-revenue">£0</strong>
+            <span>Revenue</span>
+          </div>
+          <div class="stat-tile">
+            <strong id="kpi-sold">0</strong>
+            <span>Units sold</span>
+          </div>
+          <div class="stat-tile">
+            <strong id="kpi-stock">0</strong>
+            <span>Stock left</span>
+          </div>
+          <div class="stat-tile">
+            <strong id="kpi-products">0</strong>
+            <span>Sale records</span>
+          </div>
+        </div>
+
+        <div class="seller-grid">
+          <section class="seller-panel">
+            <header class="seller-panel-head">
+              <h2>Your recent sales</h2>
+              <a class="text-link" href="seller-sales.html">Full log</a>
+            </header>
+            <div id="recent-sales" class="seller-table-wrap"></div>
+          </section>
+
+          <section class="seller-panel">
+            <header class="seller-panel-head">
+              <h2>Stock alerts</h2>
+            </header>
+            <div id="stock-alerts" class="alert-list"></div>
+          </section>
+        </div>
+
+        <section class="seller-panel seller-panel-wide">
+          <header class="seller-panel-head">
+            <div>
+              <h2>Team sales</h2>
+              <p class="panel-note">Who sold what — product, qty, total and time</p>
+            </div>
+          </header>
+          <div id="team-sales" class="seller-table-wrap"></div>
+        </section>
+
+        <div class="help-bar seller-help-bar reveal is-visible">
+          <div>
+            <h2>Tyres or workshop jobs?</h2>
+            <p>Sell from the tyre warehouse, record jobs, or open admin for reports.</p>
+          </div>
+          <div class="contact-actions">
+            <a class="btn btn-gold" href="seller-tyres.html">Tyre warehouse</a>
+            <a class="btn btn-outline" href="admin-login.html">Admin panel</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="border:0;padding-top:0">
+      <p>© <span id="year"></span> Sutton Staff Panel</p>
+      <p class="footer-note"><a href="index.html">Back to customer site</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=5"></script>
+  <script src="seller.js?v=5"></script>
+</body>
+</html>
