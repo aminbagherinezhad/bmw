@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create a Sutton Car Care Centre account to book MOT and servicing online." />
+  <title>Create account | Sutton Car Care Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20" />
+</head>
+<body class="page-auth">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="auth-shell">
+    <aside class="auth-visual" aria-hidden="true">
+      <div class="auth-visual-bg">
+        <img src="assets/service-alignment.jpg?v=3" alt="" width="960" height="1080" />
+        <div class="auth-visual-scrim"></div>
+      </div>
+      <div class="auth-visual-content">
+        <a class="brand" href="index.html">
+          <span class="brand-mark"></span>
+          <span class="brand-text">
+            <span class="brand-name">Sutton Car Care</span>
+            <span class="brand-sub">Centre</span>
+          </span>
+        </a>
+        <p class="auth-quote">Join thousands of drivers who trust our family-run garage in Sutton Coldfield.</p>
+        <ul class="auth-perks">
+          <li>40+ years experience</li>
+          <li>DVSA approved</li>
+          <li>Same-day appointments</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="auth-main" id="main">
+      <div class="auth-card">
+        <p class="eyebrow gold">Get started</p>
+        <h1>Create account</h1>
+        <p class="auth-lead">Register once — book MOT, servicing and repairs any time.</p>
+
+        <form class="auth-form" id="register-form" novalidate>
+          <div class="form-row">
+            <label>
+              <span>Full name</span>
+              <input type="text" name="name" required autocomplete="name" placeholder="Jane Smith" />
+            </label>
+            <label>
+              <span>Phone</span>
+              <input type="tel" name="phone" required autocomplete="tel" placeholder="07…" />
+            </label>
+          </div>
+
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" />
+          </label>
+
+          <div class="form-row">
+            <label>
+              <span>Password</span>
+              <div class="password-field">
+                <input type="password" name="password" required autocomplete="new-password" placeholder="Min. 6 characters" minlength="6" />
+                <button type="button" class="password-toggle" data-toggle-password aria-label="Show password">Show</button>
+              </div>
+            </label>
+            <label>
+              <span>Confirm password</span>
+              <div class="password-field">
+                <input type="password" name="confirm" required autocomplete="new-password" placeholder="Repeat password" minlength="6" />
+                <button type="button" class="password-toggle" data-toggle-password aria-label="Show password">Show</button>
+              </div>
+            </label>
+          </div>
+
+          <label class="check-label">
+            <input type="checkbox" name="terms" required />
+            <span>I agree to be contacted about my bookings and accept the garage terms.</span>
+          </label>
+
+          <button class="btn btn-gold btn-lg auth-submit" type="submit">Create account</button>
+          <p class="form-status" id="register-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <p class="auth-switch">
+          Already have an account?
+          <a href="login.html">Sign in</a>
+        </p>
+
+        <p class="auth-back">
+          <a href="index.html">← Back to home</a>
+          ·
+          <a href="book-online.html">Book online</a>
+        </p>
+      </div>
+    </main>
+  </div>
+
+  <script src="auth.js?v=2"></script>
+</body>
+</html>

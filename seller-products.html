@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shared catalogue and record tyre sales under your employee account." />
+  <title>Staff catalogue | Sutton Car Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=22" />
+</head>
+<body class="page-book page-seller">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header is-scrolled" id="header">
+    <div class="header-inner">
+      <a class="brand" href="seller-dashboard.html" aria-label="Staff dashboard">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name">Staff Panel</span>
+          <span class="brand-sub">Catalogue</span>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Staff">
+        <a href="seller-dashboard.html">Overview</a>
+        <a href="seller-tyres.html">Tyres</a>
+        <a href="seller-services.html">Services</a>
+        <a href="seller-products.html" aria-current="page">Catalogue</a>
+        <a href="seller-sales.html">Sales log</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="user-chip is-visible" data-seller-chip>
+          <span data-seller-shop>Staff</span>
+          <button type="button" data-seller-logout>Log out</button>
+        </div>
+        <a class="btn btn-gold btn-sm" href="#create-product">Add item</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="nav-mobile" id="mobile-nav" hidden>
+      <a href="seller-dashboard.html">Overview</a>
+      <a href="seller-tyres.html">Tyres</a>
+      <a href="seller-services.html">Services</a>
+      <a href="seller-products.html" aria-current="page">Catalogue</a>
+      <a href="seller-sales.html">Sales log</a>
+      <a href="#create-product">Add item</a>
+      <button type="button" class="btn btn-outline" data-seller-logout>Log out</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="book-hero orders-hero">
+      <div class="container book-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="seller-dashboard.html">Dashboard</a>
+          <span aria-hidden="true">/</span>
+          <span>Catalogue</span>
+        </nav>
+        <p class="eyebrow gold">Shared stock</p>
+        <h1>Tyres &amp; products</h1>
+        <p class="book-hero-lead">Everyone uses the same catalogue. When you tap <strong>Record sale</strong>, the sale is saved under your signed-in employee account.</p>
+      </div>
+    </section>
+
+    <section class="section orders-section">
+      <div class="container seller-products-layout">
+        <aside class="seller-panel create-panel" id="create-product">
+          <header class="seller-panel-head">
+            <h2 id="product-form-title">Add to catalogue</h2>
+          </header>
+          <form class="auth-form" id="product-form" novalidate>
+            <input type="hidden" name="id" id="product-id" value="" />
+            <label>
+              <span>Product / tyre name</span>
+              <input type="text" name="name" required placeholder="e.g. All-season tyre 205/55 R16" />
+            </label>
+            <label>
+              <span>Category</span>
+              <select name="category" required>
+                <option value="tyres">Tyres</option>
+                <option value="parts">Parts</option>
+                <option value="service">Service</option>
+                <option value="fluids">Fluids</option>
+                <option value="other">Other</option>
+              </select>
+            </label>
+            <div class="form-row">
+              <label>
+                <span>List price (£)</span>
+                <input type="number" name="price" required min="0" step="0.01" placeholder="65.00" />
+              </label>
+              <label>
+                <span>Stock qty</span>
+                <input type="number" name="stock" required min="0" step="1" placeholder="20" />
+              </label>
+            </div>
+            <label>
+              <span>Description</span>
+              <textarea name="description" rows="2" placeholder="Size, brand or fitment notes"></textarea>
+            </label>
+            <div class="form-actions">
+              <button class="btn btn-gold" type="submit">Save product</button>
+              <button class="btn btn-outline" type="button" id="product-form-reset" hidden>Cancel edit</button>
+            </div>
+            <p class="form-status" id="product-form-status" role="status" aria-live="polite"></p>
+          </form>
+        </aside>
+
+        <div class="products-board">
+          <div class="orders-toolbar">
+            <div class="book-filters" role="group" aria-label="Filter products">
+              <button type="button" class="filter-chip is-active" data-product-filter="all">All</button>
+              <button type="button" class="filter-chip" data-product-filter="tyres">Tyres</button>
+              <button type="button" class="filter-chip" data-product-filter="parts">Parts</button>
+              <button type="button" class="filter-chip" data-product-filter="service">Service</button>
+              <button type="button" class="filter-chip" data-product-filter="low">Low stock</button>
+            </div>
+          </div>
+          <div id="products-list" class="products-list"></div>
+          <p class="catalogue-empty" id="products-empty" hidden>No products yet. Add the first tyre on the left.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="sale-modal" id="sale-modal" hidden>
+    <div class="sale-modal-backdrop" data-sale-close></div>
+    <div class="sale-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="sale-modal-title">
+      <button type="button" class="sale-modal-close" data-sale-close aria-label="Close">×</button>
+      <p class="eyebrow gold">Record sale</p>
+      <h2 id="sale-modal-title">Log a sale to your account</h2>
+      <p class="sale-modal-product" id="sale-product-name">Product</p>
+      <p class="sale-modal-meta" id="sale-product-meta"></p>
+      <form class="auth-form" id="sale-form" novalidate>
+        <div class="form-row">
+          <label>
+            <span>Quantity sold</span>
+            <input type="number" name="quantity" required min="1" step="1" value="1" />
+          </label>
+          <label>
+            <span>Unit sale price (£)</span>
+            <input type="number" name="unitPrice" required min="0" step="0.01" />
+          </label>
+        </div>
+        <p class="sale-modal-note">This sale will be attributed to <strong data-seller-name>you</strong> with the exact time of submission.</p>
+        <div class="form-actions">
+          <button class="btn btn-gold" type="submit">Confirm sale</button>
+          <button class="btn btn-outline" type="button" data-sale-close>Cancel</button>
+        </div>
+        <p class="form-status" id="sale-form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="border:0;padding-top:0">
+      <p>© <span id="year"></span> Sutton Staff Panel</p>
+      <p class="footer-note"><a href="seller-dashboard.html">Back to overview</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=5"></script>
+  <script src="seller.js?v=5"></script>
+</body>
+</html>

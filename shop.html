@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Buy car and van tyres online from Sutton Car Care Centre. Filter by brand, size, season and price — fitted in Sutton Coldfield." />
+  <title>Tyre shop | Sutton Car Care Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20" />
+</head>
+<body class="page-shop">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header is-scrolled" id="header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Sutton Car Care Centre home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name">Sutton Car Care</span>
+          <span class="brand-sub">Centre</span>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="shop.html" aria-current="page">Tyre shop</a>
+        <a href="book-online.html">Book online</a>
+        <a href="request-service.html">Request service</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="orders.html" data-auth-user hidden>My orders</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="shop-cart-btn" id="shop-cart-toggle" aria-controls="shop-cart-drawer" aria-expanded="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7 7h14l-1.5 9h-12L5 4H2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9" cy="20" r="1.4" fill="currentColor"/>
+            <circle cx="17" cy="20" r="1.4" fill="currentColor"/>
+          </svg>
+          Basket
+          <span class="shop-cart-count" id="shop-cart-count">0</span>
+        </button>
+        <a class="auth-nav-link" href="login.html" data-auth-guest>Sign in</a>
+        <div class="user-chip" data-auth-user hidden>
+          <a href="orders.html" data-user-name>Account</a>
+          <button type="button" data-auth-logout>Log out</button>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="nav-mobile" id="mobile-nav" hidden>
+      <a href="index.html">Home</a>
+      <a href="shop.html" aria-current="page">Tyre shop</a>
+      <a href="book-online.html">Book online</a>
+      <a href="request-service.html">Request service</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="orders.html" data-auth-user hidden>My orders</a>
+      <a href="login.html" data-auth-guest>Sign in</a>
+      <button type="button" class="btn btn-gold" id="shop-cart-toggle-mobile">Open basket</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="shop-top">
+      <div class="container shop-top-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Automotive</span>
+          <span aria-hidden="true">/</span>
+          <span>Tyres &amp; wheels</span>
+        </nav>
+        <div class="shop-top-row">
+          <div>
+            <p class="eyebrow gold">Tyre shop</p>
+            <h1>Shop tyres &amp; wheels</h1>
+            <p class="shop-lead">Browse by brand, size and season — order online and we’ll fit them at Norris Way.</p>
+          </div>
+          <form class="shop-search" id="shop-search-form" role="search">
+            <label class="sr-only" for="shop-search">Search tyres</label>
+            <input type="search" id="shop-search" name="q" placeholder="Search brand, model or size (e.g. 205/55 R16)" autocomplete="off" />
+            <button class="btn btn-gold" type="submit">Search</button>
+          </form>
+        </div>
+
+        <div class="shop-brands" aria-label="Featured brands">
+          <button type="button" class="shop-brand-pill" data-brand-quick="Michelin">Michelin</button>
+          <button type="button" class="shop-brand-pill" data-brand-quick="Continental">Continental</button>
+          <button type="button" class="shop-brand-pill" data-brand-quick="Goodyear">Goodyear</button>
+          <button type="button" class="shop-brand-pill" data-brand-quick="Pirelli">Pirelli</button>
+          <button type="button" class="shop-brand-pill" data-brand-quick="Bridgestone">Bridgestone</button>
+          <button type="button" class="shop-brand-pill" data-brand-quick="Hankook">Hankook</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="shop-layout">
+      <div class="container shop-layout-inner">
+        <aside class="shop-filters" id="shop-filters" aria-label="Product filters">
+          <div class="shop-filters-head">
+            <h2>Filters</h2>
+            <button type="button" class="text-link" id="shop-clear-filters">Clear all</button>
+          </div>
+
+          <details class="shop-filter-group" open>
+            <summary>Brand</summary>
+            <div class="shop-filter-options" id="filter-brands"></div>
+          </details>
+
+          <details class="shop-filter-group" open>
+            <summary>Tyre size</summary>
+            <div class="shop-filter-options" id="filter-sizes"></div>
+          </details>
+
+          <details class="shop-filter-group" open>
+            <summary>Season</summary>
+            <div class="shop-filter-options" id="filter-seasons"></div>
+          </details>
+
+          <details class="shop-filter-group" open>
+            <summary>Rim diameter</summary>
+            <div class="shop-filter-options" id="filter-rims"></div>
+          </details>
+
+          <details class="shop-filter-group" open>
+            <summary>Vehicle type</summary>
+            <div class="shop-filter-options" id="filter-vehicles"></div>
+          </details>
+
+          <details class="shop-filter-group" open>
+            <summary>Price</summary>
+            <div class="shop-filter-options" id="filter-prices">
+              <label class="shop-check"><input type="checkbox" name="price" value="0-70" /> Under £70</label>
+              <label class="shop-check"><input type="checkbox" name="price" value="70-100" /> £70 – £100</label>
+              <label class="shop-check"><input type="checkbox" name="price" value="100-130" /> £100 – £130</label>
+              <label class="shop-check"><input type="checkbox" name="price" value="130-9999" /> £130 &amp; above</label>
+            </div>
+          </details>
+
+          <details class="shop-filter-group" open>
+            <summary>Customer rating</summary>
+            <div class="shop-filter-options" id="filter-ratings">
+              <label class="shop-check"><input type="radio" name="rating" value="0" checked /> All ratings</label>
+              <label class="shop-check"><input type="radio" name="rating" value="4" /> 4★ &amp; up</label>
+              <label class="shop-check"><input type="radio" name="rating" value="4.5" /> 4.5★ &amp; up</label>
+            </div>
+          </details>
+
+          <label class="shop-check shop-check-stock">
+            <input type="checkbox" id="filter-instock" />
+            In stock only
+          </label>
+        </aside>
+
+        <div class="shop-results">
+          <div class="shop-toolbar">
+            <p id="shop-result-count">0 results</p>
+            <div class="shop-toolbar-actions">
+              <button type="button" class="btn btn-outline btn-sm shop-filter-mobile-btn" id="shop-filter-mobile">Filters</button>
+              <label class="shop-sort">
+                <span>Sort by</span>
+                <select id="shop-sort">
+                  <option value="featured">Featured</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                  <option value="rating">Avg. Customer Review</option>
+                  <option value="brand">Brand A–Z</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="shop-active-filters" id="shop-active-filters" hidden></div>
+          <div class="shop-grid" id="shop-grid" aria-live="polite"></div>
+          <p class="catalogue-empty" id="shop-empty" hidden>No tyres match these filters. Try clearing a filter or searching a different size.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="shop-cart-drawer" id="shop-cart-drawer" hidden aria-label="Shopping basket">
+    <div class="shop-cart-scrim" data-cart-close></div>
+    <div class="shop-cart-panel" role="dialog" aria-modal="true" aria-labelledby="shop-cart-title">
+      <header class="shop-cart-head">
+        <h2 id="shop-cart-title">Your basket</h2>
+        <button type="button" class="shop-cart-close" data-cart-close aria-label="Close basket">×</button>
+      </header>
+      <div class="shop-cart-body" id="shop-cart-body"></div>
+      <footer class="shop-cart-foot">
+        <div class="shop-cart-total">
+          <span>Subtotal</span>
+          <strong id="shop-cart-total">£0</strong>
+        </div>
+        <p class="shop-cart-note">Fitting available at our Sutton Coldfield workshop.</p>
+        <button type="button" class="btn btn-gold btn-lg" id="shop-checkout-open" disabled>Proceed to order</button>
+      </footer>
+    </div>
+  </aside>
+
+  <div class="modal" id="shop-checkout-modal" hidden>
+    <div class="modal-backdrop" data-checkout-close></div>
+    <div class="modal-panel shop-checkout-panel" role="dialog" aria-modal="true" aria-labelledby="shop-checkout-title">
+      <button type="button" class="modal-close" data-checkout-close aria-label="Close">×</button>
+      <h2 id="shop-checkout-title">Complete your tyre order</h2>
+      <form id="shop-checkout-form" class="auth-form" novalidate>
+        <div class="form-row">
+          <label>
+            <span>Full name</span>
+            <input type="text" name="name" required autocomplete="name" />
+          </label>
+          <label>
+            <span>Phone</span>
+            <input type="tel" name="phone" required autocomplete="tel" />
+          </label>
+        </div>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required autocomplete="email" />
+        </label>
+        <div class="form-row">
+          <label>
+            <span>Vehicle registration</span>
+            <input type="text" name="vehicle" required placeholder="AB12 CDE" />
+          </label>
+          <label>
+            <span>Preferred date</span>
+            <input type="date" name="date" required />
+          </label>
+        </div>
+        <label>
+          <span>Fitting</span>
+          <select name="fitment" required>
+            <option value="fitted">Supply &amp; fit at garage</option>
+            <option value="collection">Collect only (no fitting)</option>
+          </select>
+        </label>
+        <label>
+          <span>Notes (optional)</span>
+          <textarea name="notes" rows="2" placeholder="Any fitting notes…"></textarea>
+        </label>
+        <p class="shop-checkout-summary" id="shop-checkout-summary"></p>
+        <button class="btn btn-gold btn-lg" type="submit">Place order</button>
+        <p class="form-status" id="shop-checkout-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="border:0;padding-top:0">
+      <p>© <span id="year"></span> Sutton Car Care Centre</p>
+      <p class="footer-note"><a href="index.html">Back to home</a> · <a href="tel:01213780001">0121 378 0001</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=5"></script>
+  <script src="auth.js?v=3"></script>
+  <script src="shop.js?v=1"></script>
+</body>
+</html>

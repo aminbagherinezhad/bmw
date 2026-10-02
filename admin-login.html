@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Manager login for Sutton Car Care central admin panel." />
+  <title>Admin login | Sutton Car Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20" />
+</head>
+<body class="page-auth">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="auth-shell">
+    <aside class="auth-visual" aria-hidden="true">
+      <div class="auth-visual-bg">
+        <img src="assets/warehouse-bay.jpg?v=3" alt="" width="960" height="1080" />
+        <div class="auth-visual-scrim"></div>
+      </div>
+      <div class="auth-visual-content">
+        <a class="brand" href="index.html">
+          <span class="brand-mark"></span>
+          <span class="brand-text">
+            <span class="brand-name">Admin Panel</span>
+            <span class="brand-sub">Manager</span>
+          </span>
+        </a>
+        <p class="auth-quote">Central control for stock, sales, staff performance and customer orders.</p>
+        <ul class="auth-perks">
+          <li>Daily &amp; period sales reports</li>
+          <li>Employee performance by tyre model</li>
+          <li>Inventory, services, customers &amp; access</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="auth-main" id="main">
+      <div class="auth-card">
+        <p class="eyebrow gold">Manager access</p>
+        <h1>Admin sign in</h1>
+        <p class="auth-lead">Demo login: <strong>admin@suttoncarcare.co.uk</strong> / <strong>admin123</strong></p>
+
+        <form class="auth-form" id="admin-login-form" novalidate>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required autocomplete="username" value="admin@suttoncarcare.co.uk" />
+          </label>
+          <label>
+            <span>Password</span>
+            <div class="password-field">
+              <input type="password" name="password" required autocomplete="current-password" minlength="6" value="admin123" />
+              <button type="button" class="password-toggle" data-toggle-password aria-label="Show password">Show</button>
+            </div>
+          </label>
+          <button class="btn btn-gold btn-lg auth-submit" type="submit">Open admin panel</button>
+          <p class="form-status" id="admin-login-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <p class="auth-back">
+          <a href="index.html">← Customer site</a>
+          ·
+          <a href="seller-login.html">Staff panel</a>
+        </p>
+      </div>
+    </main>
+  </div>
+
+  <script src="admin.js?v=2"></script>
+</body>
+</html>

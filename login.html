@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sign in to your Sutton Car Care Centre account to manage bookings." />
+  <title>Sign in | Sutton Car Care Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20" />
+</head>
+<body class="page-auth">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="auth-shell">
+    <aside class="auth-visual" aria-hidden="true">
+      <div class="auth-visual-bg">
+        <img src="assets/garage-hero.jpg?v=3" alt="" width="960" height="1080" />
+        <div class="auth-visual-scrim"></div>
+      </div>
+      <div class="auth-visual-content">
+        <a class="brand" href="index.html">
+          <span class="brand-mark"></span>
+          <span class="brand-text">
+            <span class="brand-name">Sutton Car Care</span>
+            <span class="brand-sub">Centre</span>
+          </span>
+        </a>
+        <p class="auth-quote">Book faster. Track your MOT. Same trusted garage — now online.</p>
+        <ul class="auth-perks">
+          <li>Save vehicle details</li>
+          <li>Quicker online booking</li>
+          <li>Open 7 days a week</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="auth-main" id="main">
+      <div class="auth-card">
+        <p class="eyebrow gold">Welcome back</p>
+        <h1>Sign in</h1>
+        <p class="auth-lead">Access your account to book MOT, servicing and more.</p>
+
+        <form class="auth-form" id="login-form" novalidate>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required autocomplete="email" placeholder="you@email.com" />
+          </label>
+
+          <label>
+            <span>Password</span>
+            <div class="password-field">
+              <input type="password" name="password" required autocomplete="current-password" placeholder="Your password" minlength="6" />
+              <button type="button" class="password-toggle" data-toggle-password aria-label="Show password">Show</button>
+            </div>
+          </label>
+
+          <div class="auth-row">
+            <label class="check-label">
+              <input type="checkbox" name="remember" />
+              <span>Remember me</span>
+            </label>
+            <a class="text-link" href="#forgot" id="forgot-link">Forgot password?</a>
+          </div>
+
+          <button class="btn btn-gold btn-lg auth-submit" type="submit">Sign in</button>
+          <p class="form-status" id="login-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <p class="auth-switch">
+          New here?
+          <a href="register.html">Create an account</a>
+        </p>
+
+        <p class="auth-back">
+          <a href="index.html">← Back to home</a>
+          ·
+          <a href="book-online.html">Book online</a>
+        </p>
+      </div>
+    </main>
+  </div>
+
+  <script src="auth.js?v=2"></script>
+</body>
+</html>

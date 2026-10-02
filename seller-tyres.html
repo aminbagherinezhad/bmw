@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tyre warehouse — brand, size, live stock, barcode and shelf location." />
+  <title>Tyre warehouse | Sutton Car Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=22" />
+</head>
+<body class="page-book page-seller">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header is-scrolled" id="header">
+    <div class="header-inner">
+      <a class="brand" href="seller-dashboard.html" aria-label="Staff dashboard">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name">Staff Panel</span>
+          <span class="brand-sub">Tyre warehouse</span>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Staff">
+        <a href="seller-dashboard.html">Overview</a>
+        <a href="seller-tyres.html" aria-current="page">Tyres</a>
+        <a href="seller-services.html">Services</a>
+        <a href="seller-products.html">Catalogue</a>
+        <a href="seller-sales.html">Sales log</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="user-chip is-visible" data-seller-chip>
+          <span data-seller-shop>Staff</span>
+          <button type="button" data-seller-logout>Log out</button>
+        </div>
+        <a class="btn btn-gold btn-sm" href="#register-tyre">Add tyre</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="nav-mobile" id="mobile-nav" hidden>
+      <a href="seller-dashboard.html">Overview</a>
+      <a href="seller-tyres.html" aria-current="page">Tyres</a>
+      <a href="seller-services.html">Services</a>
+      <a href="seller-products.html">Catalogue</a>
+      <a href="seller-sales.html">Sales log</a>
+      <a href="#register-tyre">Add tyre</a>
+      <button type="button" class="btn btn-outline" data-seller-logout>Log out</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="book-hero orders-hero">
+      <div class="container book-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="seller-dashboard.html">Dashboard</a>
+          <span aria-hidden="true">/</span>
+          <span>Tyre warehouse</span>
+        </nav>
+        <p class="eyebrow gold">Live inventory</p>
+        <h1>Tyres by brand, size &amp; shelf</h1>
+        <p class="book-hero-lead">Register every tyre with specs and warehouse location. Search or scan a barcode to see stock instantly — sales reduce quantity automatically.</p>
+      </div>
+    </section>
+
+    <section class="section orders-section">
+      <div class="container">
+        <div class="tyre-search-panel seller-panel">
+          <header class="seller-panel-head">
+            <h2>Find a tyre</h2>
+            <p class="panel-note">Search brand, model, size or scan barcode</p>
+          </header>
+          <div class="tyre-search-row">
+            <label class="tyre-search-field">
+              <span class="visually-hidden">Search tyres</span>
+              <input
+                type="search"
+                id="tyre-search"
+                placeholder="e.g. 205/55 R16 · Michelin · or barcode"
+                autocomplete="off"
+                enterkeyhint="search"
+              />
+            </label>
+            <button type="button" class="btn btn-gold" id="tyre-scan-btn">Scan barcode</button>
+            <button type="button" class="btn btn-outline" id="tyre-search-clear">Clear</button>
+          </div>
+          <p class="tyre-search-hint" id="tyre-search-status">Showing full warehouse catalogue</p>
+          <p class="tyre-search-hint soft">USB barcode scanners work in the search box — scan and press Enter.</p>
+
+          <div class="tyre-scan-panel" id="tyre-scan-panel" hidden>
+            <video id="tyre-scan-video" playsinline muted></video>
+            <div class="tyre-scan-actions">
+              <p id="tyre-scan-status" role="status"></p>
+              <button type="button" class="btn btn-outline btn-sm" id="tyre-scan-stop">Close camera</button>
+            </div>
+          </div>
+
+          <div id="tyre-find-result" class="tyre-find-result" hidden></div>
+        </div>
+
+        <div class="orders-stats seller-stats sales-summary">
+          <div class="stat-tile">
+            <strong id="tyre-kpi-units">0</strong>
+            <span>Units in warehouse</span>
+          </div>
+          <div class="stat-tile">
+            <strong id="tyre-kpi-skus">0</strong>
+            <span>Tyre SKUs</span>
+          </div>
+          <div class="stat-tile">
+            <strong id="tyre-kpi-low">0</strong>
+            <span>Low stock</span>
+          </div>
+          <div class="stat-tile">
+            <strong id="tyre-kpi-out">0</strong>
+            <span>Out of stock</span>
+          </div>
+        </div>
+
+        <div class="seller-products-layout tyre-layout">
+          <aside class="seller-panel create-panel" id="register-tyre">
+            <header class="seller-panel-head">
+              <h2 id="tyre-form-title">Register tyre</h2>
+            </header>
+            <form class="auth-form" id="tyre-form" novalidate>
+              <input type="hidden" name="id" id="tyre-id" value="" />
+              <div class="form-row">
+                <label>
+                  <span>Brand</span>
+                  <input type="text" name="brand" required placeholder="Michelin" />
+                </label>
+                <label>
+                  <span>Model</span>
+                  <input type="text" name="model" required placeholder="Primacy 4" />
+                </label>
+              </div>
+              <label>
+                <span>Size</span>
+                <input type="text" name="size" required placeholder="205/55 R16" />
+              </label>
+              <div class="form-row">
+                <label>
+                  <span>Load index</span>
+                  <input type="text" name="loadIndex" placeholder="91" />
+                </label>
+                <label>
+                  <span>Speed rating</span>
+                  <input type="text" name="speedRating" placeholder="V" maxlength="2" />
+                </label>
+              </div>
+              <label>
+                <span>Season</span>
+                <select name="season" required>
+                  <option value="summer">Summer</option>
+                  <option value="winter">Winter</option>
+                  <option value="all-season" selected>All-season</option>
+                </select>
+              </label>
+              <label>
+                <span>Product specs</span>
+                <textarea name="specs" rows="2" placeholder="XL, runflat, wet grip, notes…"></textarea>
+              </label>
+              <label>
+                <span>Barcode</span>
+                <input type="text" name="barcode" inputmode="numeric" placeholder="EAN / Code 128" />
+              </label>
+              <div class="form-row">
+                <label>
+                  <span>Price (£)</span>
+                  <input type="number" name="price" required min="0" step="0.01" placeholder="95.00" />
+                </label>
+                <label>
+                  <span>Stock qty</span>
+                  <input type="number" name="stock" required min="0" step="1" placeholder="12" />
+                </label>
+              </div>
+              <p class="location-legend">Warehouse location</p>
+              <div class="form-row form-row-3">
+                <label>
+                  <span>Row</span>
+                  <input type="text" name="row" required placeholder="A" maxlength="4" />
+                </label>
+                <label>
+                  <span>Shelf</span>
+                  <input type="text" name="shelf" required placeholder="3" maxlength="6" />
+                </label>
+                <label>
+                  <span>Level</span>
+                  <input type="text" name="level" required placeholder="2" maxlength="6" />
+                </label>
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-gold" type="submit">Save tyre</button>
+                <button class="btn btn-outline" type="button" id="tyre-form-reset" hidden>Cancel edit</button>
+              </div>
+              <p class="form-status" id="tyre-form-status" role="status" aria-live="polite"></p>
+            </form>
+          </aside>
+
+          <div class="products-board">
+            <div class="orders-toolbar">
+              <div class="book-filters" role="group" aria-label="Filter tyres">
+                <button type="button" class="filter-chip is-active" data-tyre-filter="all">All</button>
+                <button type="button" class="filter-chip" data-tyre-filter="in">In stock</button>
+                <button type="button" class="filter-chip" data-tyre-filter="low">Low</button>
+                <button type="button" class="filter-chip" data-tyre-filter="out">Out</button>
+                <button type="button" class="filter-chip" data-tyre-filter="summer">Summer</button>
+                <button type="button" class="filter-chip" data-tyre-filter="winter">Winter</button>
+                <button type="button" class="filter-chip" data-tyre-filter="all-season">All-season</button>
+              </div>
+            </div>
+            <div id="tyre-list" class="tyre-list"></div>
+            <p class="catalogue-empty" id="tyre-empty" hidden>No tyres match. Register one on the left or clear search.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="sale-modal" id="tyre-sale-modal" hidden>
+    <div class="sale-modal-backdrop" data-tyre-sale-close></div>
+    <div class="sale-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="tyre-sale-title">
+      <button type="button" class="sale-modal-close" data-tyre-sale-close aria-label="Close">×</button>
+      <p class="eyebrow gold">Record sale</p>
+      <h2 id="tyre-sale-title">Sell from warehouse</h2>
+      <p class="sale-modal-product" id="tyre-sale-name">Tyre</p>
+      <p class="sale-modal-meta" id="tyre-sale-meta"></p>
+      <form class="auth-form" id="tyre-sale-form" novalidate>
+        <div class="form-row">
+          <label>
+            <span>Quantity</span>
+            <input type="number" name="quantity" required min="1" step="1" value="1" />
+          </label>
+          <label>
+            <span>Unit price (£)</span>
+            <input type="number" name="unitPrice" required min="0" step="0.01" />
+          </label>
+        </div>
+        <p class="sale-modal-note">Stock decreases automatically and the sale is logged under <strong data-seller-name>you</strong>.</p>
+        <div class="form-actions">
+          <button class="btn btn-gold" type="submit">Confirm sale</button>
+          <button class="btn btn-outline" type="button" data-tyre-sale-close>Cancel</button>
+        </div>
+        <p class="form-status" id="tyre-sale-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="sale-modal" id="tyre-move-modal" hidden>
+    <div class="sale-modal-backdrop" data-tyre-move-close></div>
+    <div class="sale-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="tyre-move-title">
+      <button type="button" class="sale-modal-close" data-tyre-move-close aria-label="Close">×</button>
+      <p class="eyebrow gold">Move tyre</p>
+      <h2 id="tyre-move-title">Update warehouse location</h2>
+      <p class="sale-modal-product" id="tyre-move-name">Tyre</p>
+      <p class="sale-modal-meta" id="tyre-move-current"></p>
+      <form class="auth-form" id="tyre-move-form" novalidate>
+        <div class="form-row form-row-3">
+          <label>
+            <span>Row</span>
+            <input type="text" name="row" required placeholder="A" maxlength="4" />
+          </label>
+          <label>
+            <span>Shelf</span>
+            <input type="text" name="shelf" required placeholder="3" maxlength="6" />
+          </label>
+          <label>
+            <span>Level</span>
+            <input type="text" name="level" required placeholder="2" maxlength="6" />
+          </label>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-gold" type="submit">Save location</button>
+          <button class="btn btn-outline" type="button" data-tyre-move-close>Cancel</button>
+        </div>
+        <p class="form-status" id="tyre-move-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="border:0;padding-top:0">
+      <p>© <span id="year"></span> Sutton Staff Panel</p>
+      <p class="footer-note"><a href="seller-sales.html">View sales log</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=5"></script>
+  <script src="inventory.js?v=2"></script>
+</body>
+</html>

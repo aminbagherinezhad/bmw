@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Request tyre fitting, puncture repair, balancing, alignment, MOT and more at Sutton Car Care Centre." />
+  <title>Request a service | Sutton Car Care Centre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20" />
+</head>
+<body class="page-book">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header is-scrolled" id="header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Sutton Car Care Centre home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name">Sutton Car Care</span>
+          <span class="brand-sub">Centre</span>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Tyre shop</a>
+        <a href="book-online.html">Book online</a>
+        <a href="request-service.html" aria-current="page">Request service</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="phone-pill" href="tel:01213780001">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6.6 10.8c1.5 3 3.6 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z" fill="currentColor"/>
+          </svg>
+          0121 378 0001
+        </a>
+        <a class="auth-nav-link" href="login.html" data-auth-guest>Sign in</a>
+        <div class="user-chip" data-auth-user hidden>
+          <a href="orders.html" data-user-name>Account</a>
+          <button type="button" data-auth-logout>Log out</button>
+        </div>
+        <a class="btn btn-gold btn-sm" href="#request-form">Submit request</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="nav-mobile" id="mobile-nav" hidden>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Tyre shop</a>
+      <a href="book-online.html">Book online</a>
+      <a href="request-service.html" aria-current="page">Request service</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="orders.html" data-auth-user hidden>My orders</a>
+      <a href="login.html" data-auth-guest>Sign in</a>
+      <a href="register.html" data-auth-guest>Create account</a>
+      <button type="button" class="btn btn-outline" data-auth-user data-auth-logout hidden>Log out</button>
+      <a class="btn btn-gold" href="tel:01213780001">Call 0121 378 0001</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="book-hero has-photo-bg">
+      <div class="section-photo-bg" aria-hidden="true" style="--section-photo: url('assets/tyre-fitting.jpg?v=3')"></div>
+      <div class="container book-hero-inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Request a service</span>
+        </nav>
+        <p class="eyebrow gold reveal">Tell us what you need</p>
+        <h1 class="reveal delay-1">Request workshop services</h1>
+        <p class="book-hero-lead reveal delay-2">Choose the jobs you need — fitting, puncture, balance, alignment, tyres, MOT and more. We will call or email to confirm your slot.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container contact-layout">
+        <div class="seller-panel contact-form-panel reveal" id="request-form">
+          <header class="seller-panel-head">
+            <h2>Your service request</h2>
+            <p class="panel-note">Select one or more services, then add your details.</p>
+          </header>
+          <form class="auth-form" id="service-request-form" novalidate>
+            <fieldset class="service-picker">
+              <legend>Services needed</legend>
+              <div class="service-picker-grid">
+                <label class="service-pick">
+                  <input type="checkbox" name="services" value="Tyre fitting / replacement" />
+                  <span>Tyre fitting / replacement</span>
+                </label>
+                <label class="service-pick">
+                  <input type="checkbox" name="services" value="Puncture repair" />
+                  <span>Puncture repair</span>
+                </label>
+                <label class="service-pick">
+                  <input type="checkbox" name="services" value="Wheel balancing" />
+                  <span>Wheel balancing</span>
+                </label>
+                <label class="service-pick">
+                  <input type="checkbox" name="services" value="Wheel alignment" />
+                  <span>Wheel alignment</span>
+                </label>
+                <label class="service-pick">
+                  <input type="checkbox" name="services" value="Tyre repair (vulcanising)" />
+                  <span>Tyre repair (aparat)</span>
+                </label>
+                <label class="service-pick">
+                  <input type="checkbox" name="services" value="New tyres supply" />
+                  <span>New tyres supply</span>
+                </label>
+                <label class="service-pick">
+                  <input type="checkbox" name="services" value="MOT test" />
+                  <span>MOT test</span>
+                </label>
+                <label class="service-pick">
+                  <input type="checkbox" name="services" value="Car / van servicing" />
+                  <span>Car / van servicing</span>
+                </label>
+                <label class="service-pick">
+                  <input type="checkbox" name="services" value="Diagnostics" />
+                  <span>Diagnostics</span>
+                </label>
+                <label class="service-pick">
+                  <input type="checkbox" name="services" value="Air conditioning" />
+                  <span>Air conditioning</span>
+                </label>
+                <label class="service-pick">
+                  <input type="checkbox" name="services" value="Other" data-service-other />
+                  <span>Other (describe below)</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="form-row">
+              <label>
+                <span>Full name</span>
+                <input type="text" name="name" id="req-name" required autocomplete="name" placeholder="Jane Smith" />
+              </label>
+              <label>
+                <span>Phone</span>
+                <input type="tel" name="phone" id="req-phone" required autocomplete="tel" placeholder="07…" />
+              </label>
+            </div>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" id="req-email" required autocomplete="email" placeholder="you@email.com" />
+            </label>
+            <label>
+              <span>Vehicle registration</span>
+              <input type="text" name="vehicle" required placeholder="e.g. AB12 CDE" maxlength="12" autocapitalize="characters" />
+            </label>
+            <div class="form-row">
+              <label>
+                <span>Preferred date</span>
+                <input type="date" name="preferredDate" required />
+              </label>
+              <label>
+                <span>Preferred time</span>
+                <select name="preferredTime" required>
+                  <option value="">Select…</option>
+                  <option value="morning">Morning (8am–12pm)</option>
+                  <option value="afternoon">Afternoon (12pm–4pm)</option>
+                  <option value="late">Late (4pm–6pm)</option>
+                  <option value="flexible">Flexible — any time</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              <span>Additional details</span>
+              <textarea name="notes" rows="4" placeholder="Tyre size, number of wheels, urgency, or anything else we should know"></textarea>
+            </label>
+            <button class="btn btn-gold btn-lg" type="submit" style="width:100%">Submit request</button>
+            <p class="form-status" id="service-request-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="contact-side reveal delay-1">
+          <div class="seller-panel">
+            <p class="eyebrow gold">What happens next</p>
+            <h2>We confirm your slot</h2>
+            <p>Your request is sent to our workshop team. We usually respond the same day by phone or email.</p>
+            <ul class="auth-perks request-steps">
+              <li>Pick the services you need</li>
+              <li>Choose a preferred date and time</li>
+              <li>We call back to confirm</li>
+            </ul>
+            <p class="tyre-search-hint soft">Need an instant MOT or package booking? Use <a href="book-online.html">Book online</a>.</p>
+          </div>
+          <div class="seller-panel" style="margin-top:1rem">
+            <p class="eyebrow gold">Open seven days</p>
+            <h2>0121 378 0001</h2>
+            <p>Mon–Sat 8am–6pm · Sun 10am–4pm<br />Norris Way, Sutton Coldfield B75 7BB</p>
+            <a class="btn btn-outline" href="contact.html">Contact page</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <p class="brand-name">Sutton Car Care Centre</p>
+        <p>Family-run MOT &amp; garage services in the West Midlands for over 40 years.</p>
+      </div>
+      <div>
+        <p class="footer-label">Explore</p>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="request-service.html">Request service</a></li>
+          <li><a href="book-online.html">Book online</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-label">Visit</p>
+        <ul>
+          <li>Norris Way</li>
+          <li>Sutton Coldfield</li>
+          <li>B75 7BB</li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-label">Contact</p>
+        <ul>
+          <li><a href="tel:01213780001">0121 378 0001</a></li>
+          <li><a href="mailto:suttoncarcarecentre@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> Sutton Car Care Centre. All rights reserved.</p>
+      <p class="footer-note">Open Mon–Sat 8am–6pm · Sun 10am–4pm</p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=7"></script>
+  <script src="auth.js?v=2"></script>
+</body>
+</html>
